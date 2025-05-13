@@ -79,19 +79,19 @@ catalyst_center:
                     local_ip_address: 172.16.130.1/24
                     peer_ip_address: 172.16.130.2/24
                     vlan: 311
-        l2_handoffs:
-          l2_without_anycast_gateway:
-            vlans:
-              - name: GWOF
-                external_vlan: 500
-            interfaces:
-              - Gi2/0/4
-              - Gi2/0/5
-          l2_with_anycast_gateway:
-            - name: Campus
-              external_vlan: 400
-              interfaces:
-                - Gi2/0/4
+        # l2_handoffs:
+        #   l2_without_anycast_gateway:
+        #     vlans:
+        #       - name: GWOF
+        #         external_vlan: 500
+        #     interfaces:
+        #       - Gi2/0/4
+        #       - Gi2/0/5
+        #   l2_with_anycast_gateway:
+        #     - name: Campus
+        #       external_vlan: 400
+        #       interfaces:
+        #         - Gi2/0/4
       - name: KRK-DNA-P4-BORD12.cisco.com
         border_types:
           - LAYER_3
