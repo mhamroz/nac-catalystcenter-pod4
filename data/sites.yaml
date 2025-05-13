@@ -13,12 +13,28 @@ catalyst_center:
           - GuestVN-IPPool
           - PrintersVN-IPPool
           - BYOD-IPPool
+          - CampusVN-Mcast
+          - GuestVN-Mcast
+      - name: Warsaw
+        parent_name: Global/Poland
+        network_settings:
+          aaa_servers: AAA_Settings
+        ip_pools_reservations:
+          - CampusVN-WAW-IPPool
+          - GuestVN-WAW-IPPool
+          - PrintersVN-WAW-IPPool
+          - BYOD-WAW-IPPool
     buildings:
       - name: Bld A
         latitude: 50.0623225
         longitude: 19.937975
         country: Poland
         parent_name: Global/Poland/Krakow
+      - name: Domaniewska 39B
+        latitude: 52.1820715
+        longitude: 21.0030143
+        country: Poland
+        parent_name: Global/Poland/Warsaw
     floors:
       - name: FLOOR_1
         floor_number: 1

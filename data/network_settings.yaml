@@ -6,12 +6,12 @@ catalyst_center:
         network_aaa:
           server_type: ISE
           protocol: RADIUS
-          primary_ip: 198.18.133.27
+          primary_ip: 172.17.3.159
           shared_secret: C1sco12345
         client_and_endpoint_aaa:
           server_type: ISE
           protocol: RADIUS
-          primary_ip: 198.18.133.27
+          primary_ip: 172.17.3.159
           shared_secret: C1sco12345
     ip_pools:
       - name: Overlay
@@ -26,10 +26,26 @@ catalyst_center:
               - 198.18.130.11
             dhcp_servers:
               - 198.18.130.11
+          - name: CampusVN-Mcast
+            prefix_length: 24
+            subnet: 192.168.110.0
+            gateway: 192.168.110.1
+            dns_servers:
+              - 198.18.130.11
+            dhcp_servers:
+              - 198.18.130.11
           - name: GuestVN-IPPool
             prefix_length: 24
             subnet: 192.168.101.0
             gateway: 192.168.101.1
+            dns_servers:
+              - 198.18.130.11
+            dhcp_servers:
+              - 198.18.130.11
+          - name: GuestVN-Mcast
+            prefix_length: 24
+            subnet: 192.168.120.0
+            gateway: 192.168.120.1
             dns_servers:
               - 198.18.130.11
             dhcp_servers:
@@ -50,3 +66,36 @@ catalyst_center:
               - 198.18.130.11
             dhcp_servers:
               - 198.18.130.11
+          - name: CampusVN-WAW-IPPool
+            prefix_length: 24
+            subnet: 192.168.200.0
+            gateway: 192.168.200.1
+            dns_servers:
+              - 198.18.130.11
+            dhcp_servers:
+              - 198.18.130.11
+          - name: GuestVN-WAW-IPPool
+            prefix_length: 24
+            subnet: 192.168.201.0
+            gateway: 192.168.201.1
+            dns_servers:
+              - 198.18.130.11
+            dhcp_servers:
+              - 198.18.130.11
+          - name: PrintersVN-WAW-IPPool
+            prefix_length: 24
+            subnet: 192.168.210.0
+            gateway: 192.168.210.1
+            dns_servers:
+              - 198.18.130.11
+            dhcp_servers:
+              - 198.18.130.11
+          - name: BYOD-WAW-IPPool
+            prefix_length: 24
+            subnet: 192.168.203.0
+            gateway: 192.168.203.1
+            dns_servers:
+              - 198.18.130.11
+            dhcp_servers:
+              - 198.18.130.11
+

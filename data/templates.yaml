@@ -10,3 +10,53 @@ catalyst_center:
               - product_family: "Switches and Hubs"
                 product_series: "Cisco Catalyst 9000 Series Virtual Switches"
             software_type: IOS-XE
+      - name: ProjectCatasCode
+        dayn_templates:
+          - name: 0400_acl_standard_1
+            description: ACL 1
+            language: JINJA
+            composite: false
+            device_types:
+              - product_family: "Routers"
+                product_series: "Cisco ASR 1000 Series Aggregation Services Routers"
+            software_type: IOS-XE
+          - name: 0090_clock
+            description: Clock configuration on IOSXE
+            language: JINJA
+            composite: false
+            device_types:
+              - product_family: "Routers"
+                product_series: "Cisco ASR 1000 Series Aggregation Services Routers"
+            software_type: IOS-XE
+          # - name: 0410_acl_standard_2
+          #   description: ACL 12
+          #   language: JINJA
+          #   composite: false
+          #   device_types:
+          #     - product_family: "Routers"
+          #       product_series: "Cisco ASR 1000 Series Aggregation Services Routers"
+          #   software_type: IOS-XE
+          - name: 0420_acl_standard_20
+            description: ACL 20
+            language: JINJA
+            composite: false
+            device_types:
+              - product_family: "Routers"
+                product_series: "Cisco ASR 1000 Series Aggregation Services Routers"
+            software_type: IOS-XE
+          - name: 0430_acl_standard_23
+            description: ACL 24
+            language: JINJA
+            composite: false
+            device_types:
+              - product_family: "Routers"
+                product_series: "Cisco ASR 1000 Series Aggregation Services Routers"
+            software_type: IOS-XE
+          - name: 0440_acl_standard_24
+            description: ACL 24
+            language: JINJA
+            composite: false
+            device_types:
+              - product_family: "Routers"
+                product_series: "Cisco ASR 1000 Series Aggregation Services Routers"
+            software_type: IOS-XE

@@ -1,0 +1,1368 @@
+{
+  "version": 4,
+  "terraform_version": "1.10.5",
+  "serial": 762,
+  "lineage": "332c4ece-4995-490c-0765-b185bf002298",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.catalyst_center",
+      "mode": "data",
+      "type": "catalystcenter_area",
+      "name": "global",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "3abb944d-550f-4802-b62d-462ae5108cf7",
+            "name": "Global",
+            "parent_name": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "data",
+      "type": "catalystcenter_network_devices",
+      "name": "all_devices",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "devices": [
+              {
+                "hostname": "KRK-DNA-P4-BORD11",
+                "id": "a144a086-750c-4af1-ac57-feab33a69851",
+                "management_ip_address": "192.168.40.3",
+                "management_state": "Managed",
+                "platform_id": "C9300-24P",
+                "role": "BORDER ROUTER",
+                "software_type": "IOS-XE"
+              },
+              {
+                "hostname": "KRK-DNA-P4-BORD12",
+                "id": "541c0acc-d5d2-45b8-94b8-e03e824a799c",
+                "management_ip_address": "192.168.40.2",
+                "management_state": "Managed",
+                "platform_id": "ISR4321/K9",
+                "role": "BORDER ROUTER",
+                "software_type": "IOS-XE"
+              },
+              {
+                "hostname": "KRK-DNA-P4-BORD21.cisco.com",
+                "id": "18b88e78-bef6-486f-b901-e4082e09a69a",
+                "management_ip_address": "192.168.40.4",
+                "management_state": "Managed",
+                "platform_id": "C9300-24P",
+                "role": "ACCESS",
+                "software_type": "IOS-XE"
+              },
+              {
+                "hostname": "KRK-DNA-P4-BORD22",
+                "id": "d77c287d-8349-4958-8f1d-eb74cf0a874d",
+                "management_ip_address": "192.168.40.8",
+                "management_state": "Managed",
+                "platform_id": "ASR1001-X",
+                "role": "BORDER ROUTER",
+                "software_type": "IOS-XE"
+              },
+              {
+                "hostname": "KRK-DNA-P4-EDGE21.cisco.com",
+                "id": "b2edb1e6-678d-493d-9522-1facfeae75bd",
+                "management_ip_address": "192.168.40.7",
+                "management_state": "Managed",
+                "platform_id": "C9300-24P",
+                "role": "ACCESS",
+                "software_type": "IOS-XE"
+              },
+              {
+                "hostname": "KRK-DNA-P4-FUSION.cisco.com",
+                "id": "f1b053cf-5916-4391-b55b-72f745bed6ab",
+                "management_ip_address": "192.168.40.1",
+                "management_state": "Managed",
+                "platform_id": "ISR4321/K9",
+                "role": "BORDER ROUTER",
+                "software_type": "IOS-XE"
+              }
+            ]
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_anycast_gateway",
+      "name": "anycast_gateway",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "PrintersVN-IPPool",
+          "schema_version": 0,
+          "attributes": {
+            "auto_generate_vlan_name": true,
+            "critical_pool": null,
+            "fabric_id": null,
+            "group_based_policy_enforcement_enabled": null,
+            "id": "5d3da74b-6f4a-48ba-aa13-4599b46a44e0",
+            "intra_subnet_routing_enabled": null,
+            "ip_directed_broadcast": null,
+            "ip_pool_name": null,
+            "l2_flooding_enabled": null,
+            "multiple_ip_to_mac_addresses": null,
+            "pool_type": null,
+            "security_group_name": null,
+            "supplicant_based_extended_node_onboarding": null,
+            "tcp_mss_adjustment": null,
+            "traffic_type": null,
+            "virtual_network_name": null,
+            "vlan_id": null,
+            "vlan_name": null,
+            "wireless_pool": null
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_fabric_l3_virtual_network.l3_vn",
+            "module.catalyst_center.catalystcenter_fabric_site.fabric_site",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.catalystcenter_ip_pool_reservation.pool_reservation",
+            "module.catalyst_center.catalystcenter_telemetry_settings.telemetry_settings",
+            "module.catalyst_center.data.catalystcenter_area.global",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_area",
+      "name": "area_0",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "Global/Poland",
+          "schema_version": 0,
+          "attributes": {
+            "id": "8064da79-1954-4c12-9278-29ab5c96fdfd",
+            "name": "Poland",
+            "parent_name": "Global"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_area",
+      "name": "area_1",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "Global/Poland/Krakow",
+          "schema_version": 0,
+          "attributes": {
+            "id": "5e9833e6-5578-41f0-b097-16d5a3dc6779",
+            "name": "Krakow",
+            "parent_name": "Global/Poland"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "Global/Poland/Warsaw",
+          "schema_version": 0,
+          "attributes": {
+            "id": "7d0673fd-382b-4f74-b4f1-c55f73759261",
+            "name": "Warsaw",
+            "parent_name": "Global/Poland"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_building",
+      "name": "building",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "Global/Poland/Krakow/Bld A",
+          "schema_version": 0,
+          "attributes": {
+            "address": null,
+            "country": "Poland",
+            "id": "ac250a1c-b237-4dce-8bb8-65dd8f4a88c9",
+            "latitude": 50.0623225,
+            "longitude": 19.937975,
+            "name": "Bld A",
+            "parent_name": "Global/Poland/Krakow"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_device_role",
+      "name": "role",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "KRK-DNA-P4-BORD11.cisco.com",
+          "schema_version": 0,
+          "attributes": {
+            "device_id": "a144a086-750c-4af1-ac57-feab33a69851",
+            "id": "a144a086-750c-4af1-ac57-feab33a69851",
+            "role": "BORDER ROUTER",
+            "role_source": "MANUAL"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.data.catalystcenter_network_devices.all_devices"
+          ]
+        },
+        {
+          "index_key": "KRK-DNA-P4-BORD12.cisco.com",
+          "schema_version": 0,
+          "attributes": {
+            "device_id": "541c0acc-d5d2-45b8-94b8-e03e824a799c",
+            "id": "541c0acc-d5d2-45b8-94b8-e03e824a799c",
+            "role": "BORDER ROUTER",
+            "role_source": "MANUAL"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.data.catalystcenter_network_devices.all_devices"
+          ]
+        },
+        {
+          "index_key": "KRK-DNA-P4-BORD22.cisco.com",
+          "schema_version": 0,
+          "attributes": {
+            "device_id": "d77c287d-8349-4958-8f1d-eb74cf0a874d",
+            "id": "d77c287d-8349-4958-8f1d-eb74cf0a874d",
+            "role": "BORDER ROUTER",
+            "role_source": "MANUAL"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.data.catalystcenter_network_devices.all_devices"
+          ]
+        },
+        {
+          "index_key": "KRK-DNA-P4-EDGE11.cisco.com",
+          "schema_version": 0,
+          "attributes": {
+            "device_id": "f954b367-bcde-4995-9640-4bcfc863f5d1",
+            "id": "f954b367-bcde-4995-9640-4bcfc863f5d1",
+            "role": "ACCESS",
+            "role_source": "MANUAL"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.data.catalystcenter_network_devices.all_devices"
+          ]
+        },
+        {
+          "index_key": "KRK-DNA-P4-EDGE12.cisco.com",
+          "schema_version": 0,
+          "attributes": {
+            "device_id": "52fc8677-3c05-430c-8fe3-55f82491946b",
+            "id": "52fc8677-3c05-430c-8fe3-55f82491946b",
+            "role": "ACCESS",
+            "role_source": "MANUAL"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.data.catalystcenter_network_devices.all_devices"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_discovery",
+      "name": "discovery",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "Campus_TF",
+          "schema_version": 0,
+          "attributes": {
+            "cdp_level": null,
+            "discovery_type": "Range",
+            "enable_password_list": null,
+            "global_credential_id_list": null,
+            "http_read_credential": null,
+            "http_write_credential": null,
+            "id": "141",
+            "ip_address_list": "192.168.40.1-192.168.40.9",
+            "ip_filter_list": null,
+            "lldp_level": null,
+            "name": "Campus_TF",
+            "netconf_port": null,
+            "password_list": null,
+            "preferred_ip_method": "None",
+            "protocol_order": "SSH,Telnet",
+            "retry": null,
+            "snmp_auth_passphrase": null,
+            "snmp_auth_protocol": null,
+            "snmp_mode": null,
+            "snmp_priv_passphrase": null,
+            "snmp_priv_protocol": null,
+            "snmp_ro_community": null,
+            "snmp_ro_community_desc": null,
+            "snmp_rw_community": null,
+            "snmp_rw_community_desc": null,
+            "snmp_user_name": null,
+            "snmp_version": null,
+            "timeout_seconds": null,
+            "user_name_list": null
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_fabric_device",
+      "name": "border_device",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "KRK-DNA-P4-BORD11.cisco.com",
+          "schema_version": 0,
+          "attributes": {
+            "border_priority": null,
+            "border_types": [
+              "LAYER_3"
+            ],
+            "default_exit": true,
+            "device_roles": [
+              "BORDER_NODE",
+              "CONTROL_PLANE_NODE"
+            ],
+            "fabric_id": "88062621-4cfd-4644-9aa0-ad72cbd04848",
+            "id": "4d6f97ea-368c-4591-bb3a-e73e4c6bf4eb",
+            "import_external_routes": false,
+            "local_autonomous_system_number": "65002",
+            "network_device_id": "a144a086-750c-4af1-ac57-feab33a69851",
+            "prepend_autonomous_system_count": null
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_device_role.role",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_fabric_provision_device.border_device",
+            "module.catalyst_center.catalystcenter_fabric_site.fabric_site",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_telemetry_settings.telemetry_settings",
+            "module.catalyst_center.data.catalystcenter_area.global",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.data.catalystcenter_network_devices.all_devices"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_fabric_l3_virtual_network",
+      "name": "l3_vn",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "BYOD",
+          "schema_version": 0,
+          "attributes": {
+            "anchored_site_id": null,
+            "fabric_ids": [
+              "88062621-4cfd-4644-9aa0-ad72cbd04848",
+              "c3a63598-fee0-4f5e-8ccb-005dd7a8f355"
+            ],
+            "id": "5c58259b-fab4-4928-9432-d359f0a26cc9",
+            "virtual_network_name": "BYOD"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_fabric_site.fabric_site",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.catalystcenter_ip_pool_reservation.pool_reservation",
+            "module.catalyst_center.catalystcenter_telemetry_settings.telemetry_settings",
+            "module.catalyst_center.data.catalystcenter_area.global",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "Campus",
+          "schema_version": 0,
+          "attributes": {
+            "anchored_site_id": null,
+            "fabric_ids": [
+              "88062621-4cfd-4644-9aa0-ad72cbd04848",
+              "c3a63598-fee0-4f5e-8ccb-005dd7a8f355"
+            ],
+            "id": "f4609507-68b9-4755-a6b6-b2cd8b0e4097",
+            "virtual_network_name": "Campus"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_fabric_site.fabric_site",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.catalystcenter_ip_pool_reservation.pool_reservation",
+            "module.catalyst_center.catalystcenter_telemetry_settings.telemetry_settings",
+            "module.catalyst_center.data.catalystcenter_area.global",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "Guest",
+          "schema_version": 0,
+          "attributes": {
+            "anchored_site_id": null,
+            "fabric_ids": [
+              "88062621-4cfd-4644-9aa0-ad72cbd04848",
+              "c3a63598-fee0-4f5e-8ccb-005dd7a8f355"
+            ],
+            "id": "fdd21313-b2ee-48b2-8971-da47d3353c21",
+            "virtual_network_name": "Guest"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_fabric_site.fabric_site",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.catalystcenter_ip_pool_reservation.pool_reservation",
+            "module.catalyst_center.catalystcenter_telemetry_settings.telemetry_settings",
+            "module.catalyst_center.data.catalystcenter_area.global",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "Printers",
+          "schema_version": 0,
+          "attributes": {
+            "anchored_site_id": null,
+            "fabric_ids": [
+              "88062621-4cfd-4644-9aa0-ad72cbd04848",
+              "c3a63598-fee0-4f5e-8ccb-005dd7a8f355"
+            ],
+            "id": "fc58af02-7359-43c9-a378-a3dbfd174875",
+            "virtual_network_name": "Printers"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_fabric_site.fabric_site",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.catalystcenter_ip_pool_reservation.pool_reservation",
+            "module.catalyst_center.catalystcenter_telemetry_settings.telemetry_settings",
+            "module.catalyst_center.data.catalystcenter_area.global",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_fabric_provision_device",
+      "name": "border_device",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "KRK-DNA-P4-BORD11.cisco.com",
+          "schema_version": 0,
+          "attributes": {
+            "id": "4d6f97ea-368c-4591-bb3a-e73e4c6bf4eb",
+            "network_device_id": "a144a086-750c-4af1-ac57-feab33a69851",
+            "reprovision": false,
+            "site_id": "ac250a1c-b237-4dce-8bb8-65dd8f4a88c9"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_device_role.role",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.data.catalystcenter_network_devices.all_devices"
+          ]
+        },
+        {
+          "index_key": "KRK-DNA-P4-BORD12.cisco.com",
+          "schema_version": 0,
+          "attributes": {
+            "id": "dd66d835-2ab5-475d-88e1-62ff1df7af67",
+            "network_device_id": "541c0acc-d5d2-45b8-94b8-e03e824a799c",
+            "reprovision": false,
+            "site_id": "ac250a1c-b237-4dce-8bb8-65dd8f4a88c9"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_device_role.role",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.data.catalystcenter_network_devices.all_devices"
+          ]
+        },
+        {
+          "index_key": "KRK-DNA-P4-BORD22.cisco.com",
+          "schema_version": 0,
+          "attributes": {
+            "id": "8423abc8-29ae-4f5e-a675-c281a41d25d8",
+            "network_device_id": "d77c287d-8349-4958-8f1d-eb74cf0a874d",
+            "reprovision": false,
+            "site_id": "ac250a1c-b237-4dce-8bb8-65dd8f4a88c9"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_device_role.role",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.data.catalystcenter_network_devices.all_devices"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_fabric_site",
+      "name": "fabric_site",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "Global/Poland/Krakow",
+          "schema_version": 0,
+          "attributes": {
+            "authentication_profile_name": "No Authentication",
+            "id": "88062621-4cfd-4644-9aa0-ad72cbd04848",
+            "pub_sub_enabled": true,
+            "site_id": "5e9833e6-5578-41f0-b097-16d5a3dc6779"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_telemetry_settings.telemetry_settings",
+            "module.catalyst_center.data.catalystcenter_area.global",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "Global/Poland/Warsaw",
+          "schema_version": 0,
+          "attributes": {
+            "authentication_profile_name": "No Authentication",
+            "id": "c3a63598-fee0-4f5e-8ccb-005dd7a8f355",
+            "pub_sub_enabled": true,
+            "site_id": "7d0673fd-382b-4f74-b4f1-c55f73759261"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_telemetry_settings.telemetry_settings",
+            "module.catalyst_center.data.catalystcenter_area.global",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_floor",
+      "name": "floor",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "Global/Poland/Krakow/Bld A/FLOOR_1",
+          "schema_version": 0,
+          "attributes": {
+            "floor_number": 1,
+            "height": 3,
+            "id": "7ae322dd-35ea-4a72-a29f-12fe1c098680",
+            "length": 30,
+            "name": "FLOOR_1",
+            "parent_name": "Global/Poland/Krakow/Bld A",
+            "rf_model": "Cubes And Walled Offices",
+            "width": 30
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "Global/Poland/Krakow/Bld A/FLOOR_2",
+          "schema_version": 0,
+          "attributes": {
+            "floor_number": 2,
+            "height": 3,
+            "id": "0186ac52-1d15-43c9-9057-7b89d1eee0d7",
+            "length": 30,
+            "name": "FLOOR_2",
+            "parent_name": "Global/Poland/Krakow/Bld A",
+            "rf_model": "Cubes And Walled Offices",
+            "width": 30
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_ip_pool",
+      "name": "ip_pool_v4",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "Overlay",
+          "schema_version": 0,
+          "attributes": {
+            "dhcp_server_ips": null,
+            "dns_server_ips": null,
+            "gateway": null,
+            "id": "aeef9c98-5061-4001-8693-1ae7b2166d25",
+            "ip_address_space": "IPv4",
+            "ip_subnet": "192.168.0.0/16",
+            "name": "Overlay",
+            "type": "generic"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_ip_pool_reservation",
+      "name": "pool_reservation",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "BYOD-IPPool",
+          "schema_version": 0,
+          "attributes": {
+            "id": "361a0f6e-7492-4758-9a78-ccbfb6fcfe17",
+            "ipv4_dhcp_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_dns_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_gateway": "192.168.103.1",
+            "ipv4_global_pool": "192.168.0.0/16",
+            "ipv4_prefix": true,
+            "ipv4_prefix_length": 24,
+            "ipv4_subnet": "192.168.103.0",
+            "ipv4_total_host": null,
+            "ipv6_address_space": false,
+            "ipv6_dhcp_servers": null,
+            "ipv6_dns_servers": null,
+            "ipv6_gateway": null,
+            "ipv6_global_pool": null,
+            "ipv6_prefix": false,
+            "ipv6_prefix_length": null,
+            "ipv6_subnet": null,
+            "ipv6_total_host": null,
+            "name": "BYOD-IPPool",
+            "site_id": "5e9833e6-5578-41f0-b097-16d5a3dc6779",
+            "slaac_support": null,
+            "type": "Generic"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "BYOD-WAW-IPPool",
+          "schema_version": 0,
+          "attributes": {
+            "id": "586867ef-080a-42b5-a311-26b366fb08b2",
+            "ipv4_dhcp_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_dns_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_gateway": "192.168.203.1",
+            "ipv4_global_pool": "192.168.0.0/16",
+            "ipv4_prefix": true,
+            "ipv4_prefix_length": 24,
+            "ipv4_subnet": "192.168.203.0",
+            "ipv4_total_host": null,
+            "ipv6_address_space": false,
+            "ipv6_dhcp_servers": null,
+            "ipv6_dns_servers": null,
+            "ipv6_gateway": null,
+            "ipv6_global_pool": null,
+            "ipv6_prefix": false,
+            "ipv6_prefix_length": null,
+            "ipv6_subnet": null,
+            "ipv6_total_host": null,
+            "name": "BYOD-WAW-IPPool",
+            "site_id": "7d0673fd-382b-4f74-b4f1-c55f73759261",
+            "slaac_support": null,
+            "type": "Generic"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "CampusVN-IPPool",
+          "schema_version": 0,
+          "attributes": {
+            "id": "b680f2bb-5c6a-4c7c-af9b-ca89aff8f617",
+            "ipv4_dhcp_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_dns_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_gateway": "192.168.100.1",
+            "ipv4_global_pool": "192.168.0.0/16",
+            "ipv4_prefix": true,
+            "ipv4_prefix_length": 24,
+            "ipv4_subnet": "192.168.100.0",
+            "ipv4_total_host": null,
+            "ipv6_address_space": false,
+            "ipv6_dhcp_servers": null,
+            "ipv6_dns_servers": null,
+            "ipv6_gateway": null,
+            "ipv6_global_pool": null,
+            "ipv6_prefix": false,
+            "ipv6_prefix_length": null,
+            "ipv6_subnet": null,
+            "ipv6_total_host": null,
+            "name": "CampusVN-IPPool",
+            "site_id": "5e9833e6-5578-41f0-b097-16d5a3dc6779",
+            "slaac_support": null,
+            "type": "Generic"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "CampusVN-WAW-IPPool",
+          "schema_version": 0,
+          "attributes": {
+            "id": "1a7a5ad0-f671-4231-8c9d-1f8a8c8999d3",
+            "ipv4_dhcp_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_dns_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_gateway": "192.168.200.1",
+            "ipv4_global_pool": "192.168.0.0/16",
+            "ipv4_prefix": true,
+            "ipv4_prefix_length": 24,
+            "ipv4_subnet": "192.168.200.0",
+            "ipv4_total_host": null,
+            "ipv6_address_space": false,
+            "ipv6_dhcp_servers": null,
+            "ipv6_dns_servers": null,
+            "ipv6_gateway": null,
+            "ipv6_global_pool": null,
+            "ipv6_prefix": false,
+            "ipv6_prefix_length": null,
+            "ipv6_subnet": null,
+            "ipv6_total_host": null,
+            "name": "CampusVN-WAW-IPPool",
+            "site_id": "7d0673fd-382b-4f74-b4f1-c55f73759261",
+            "slaac_support": null,
+            "type": "Generic"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "GuestVN-IPPool",
+          "schema_version": 0,
+          "attributes": {
+            "id": "98b362ec-d730-4e88-825c-5d6f8bb016d3",
+            "ipv4_dhcp_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_dns_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_gateway": "192.168.101.1",
+            "ipv4_global_pool": "192.168.0.0/16",
+            "ipv4_prefix": true,
+            "ipv4_prefix_length": 24,
+            "ipv4_subnet": "192.168.101.0",
+            "ipv4_total_host": null,
+            "ipv6_address_space": false,
+            "ipv6_dhcp_servers": null,
+            "ipv6_dns_servers": null,
+            "ipv6_gateway": null,
+            "ipv6_global_pool": null,
+            "ipv6_prefix": false,
+            "ipv6_prefix_length": null,
+            "ipv6_subnet": null,
+            "ipv6_total_host": null,
+            "name": "GuestVN-IPPool",
+            "site_id": "5e9833e6-5578-41f0-b097-16d5a3dc6779",
+            "slaac_support": null,
+            "type": "Generic"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "GuestVN-WAW-IPPool",
+          "schema_version": 0,
+          "attributes": {
+            "id": "628666a9-5be6-4240-b579-334afb91c186",
+            "ipv4_dhcp_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_dns_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_gateway": "192.168.201.1",
+            "ipv4_global_pool": "192.168.0.0/16",
+            "ipv4_prefix": true,
+            "ipv4_prefix_length": 24,
+            "ipv4_subnet": "192.168.201.0",
+            "ipv4_total_host": null,
+            "ipv6_address_space": false,
+            "ipv6_dhcp_servers": null,
+            "ipv6_dns_servers": null,
+            "ipv6_gateway": null,
+            "ipv6_global_pool": null,
+            "ipv6_prefix": false,
+            "ipv6_prefix_length": null,
+            "ipv6_subnet": null,
+            "ipv6_total_host": null,
+            "name": "GuestVN-WAW-IPPool",
+            "site_id": "7d0673fd-382b-4f74-b4f1-c55f73759261",
+            "slaac_support": null,
+            "type": "Generic"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "PrintersVN-IPPool",
+          "schema_version": 0,
+          "attributes": {
+            "id": "46b0b247-9970-4c6c-a42b-939aa1c61f31",
+            "ipv4_dhcp_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_dns_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_gateway": "192.168.102.1",
+            "ipv4_global_pool": "192.168.0.0/16",
+            "ipv4_prefix": true,
+            "ipv4_prefix_length": 24,
+            "ipv4_subnet": "192.168.102.0",
+            "ipv4_total_host": null,
+            "ipv6_address_space": false,
+            "ipv6_dhcp_servers": null,
+            "ipv6_dns_servers": null,
+            "ipv6_gateway": null,
+            "ipv6_global_pool": null,
+            "ipv6_prefix": false,
+            "ipv6_prefix_length": null,
+            "ipv6_subnet": null,
+            "ipv6_total_host": null,
+            "name": "PrintersVN-IPPool",
+            "site_id": "5e9833e6-5578-41f0-b097-16d5a3dc6779",
+            "slaac_support": null,
+            "type": "Generic"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        },
+        {
+          "index_key": "PrintersVN-WAW-IPPool",
+          "schema_version": 0,
+          "attributes": {
+            "id": "fae9f208-7e49-417f-8d6c-9ebf219047a2",
+            "ipv4_dhcp_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_dns_servers": [
+              "198.18.130.11"
+            ],
+            "ipv4_gateway": "192.168.210.1",
+            "ipv4_global_pool": "192.168.0.0/16",
+            "ipv4_prefix": true,
+            "ipv4_prefix_length": 24,
+            "ipv4_subnet": "192.168.210.0",
+            "ipv4_total_host": null,
+            "ipv6_address_space": false,
+            "ipv6_dhcp_servers": null,
+            "ipv6_dns_servers": null,
+            "ipv6_gateway": null,
+            "ipv6_global_pool": null,
+            "ipv6_prefix": false,
+            "ipv6_prefix_length": null,
+            "ipv6_subnet": null,
+            "ipv6_total_host": null,
+            "name": "PrintersVN-WAW-IPPool",
+            "site_id": "7d0673fd-382b-4f74-b4f1-c55f73759261",
+            "slaac_support": null,
+            "type": "Generic"
+          },
+          "sensitive_attributes": [],
+          "dependencies": [
+            "module.catalyst_center.catalystcenter_area.area_0",
+            "module.catalyst_center.catalystcenter_area.area_1",
+            "module.catalyst_center.catalystcenter_area.area_2",
+            "module.catalyst_center.catalystcenter_building.building",
+            "module.catalyst_center.catalystcenter_credentials_cli.cli_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_read.https_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_https_write.https_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_read.snmpv2_read_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv2_write.snmpv2_write_credentials",
+            "module.catalyst_center.catalystcenter_credentials_snmpv3.snmpv3_credentials",
+            "module.catalyst_center.catalystcenter_discovery.discovery",
+            "module.catalyst_center.catalystcenter_floor.floor",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v4",
+            "module.catalyst_center.catalystcenter_ip_pool.ip_pool_v6",
+            "module.catalyst_center.data.catalystcenter_credentials_cli.cli_credentials"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.catalyst_center",
+      "mode": "managed",
+      "type": "catalystcenter_transit_network",
+      "name": "transit",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/catalystcenter\"]",
+      "instances": [
+        {
+          "index_key": "BGP65010",
+          "schema_version": 0,
+          "attributes": {
+            "autonomous_system_number": "65010",
+            "control_plane_network_device_ids": null,
+            "id": "b64f7e15-b87f-4444-8af7-2d840a330534",
+            "is_multicast_over_transit_enabled": null,
+            "name": "BGP65010",
+            "routing_protocol_name": "BGP",
+            "type": "IP_BASED_TRANSIT"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    }
+  ],
+  "check_results": [
+    {
+      "object_kind": "resource",
+      "config_addr": "module.catalyst_center.terraform_data.validation",
+      "status": "unknown",
+      "objects": null
+    }
+  ]
+}

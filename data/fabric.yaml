@@ -2,10 +2,15 @@
 catalyst_center:
   fabric:
     transits:
-      - name: BGP65002
+      - name: BGP65010
         type: IP_BASED_TRANSIT
         routing_protocol_name: BGP
-        autonomous_system_number: 65002
+        autonomous_system_number: 65010
+      # - name: SDA_TRANSIT
+      #   type: SDA_LISP_PUB_SUB_TRANSIT
+      #   control_plane_devices: 
+      #     - KRK-DNA-P4-BORD22
+      #   multicast_over_sda_transit: true
     fabric_sites:
       - name: Global/Poland/Krakow
         authentication_template_name: No Authentication
@@ -32,19 +37,90 @@ catalyst_center:
             auto_generate_vlan_name: true
             traffic_type: DATA
             l3_virtual_network: Printers
+      - name: Global/Poland/Warsaw
+        authentication_template_name: No Authentication
+        pub_sub_enabled: true
+        l3_virtual_networks:
+          - name: BYOD
+          - name: Guest
+          - name: Printers
+          - name: Campus
+        anycast_gateways:
+          - name: CampusVN-WAW-IPPool
+            auto_generate_vlan_name: true
+            traffic_type: DATA
+            l3_virtual_network: Campus
+          - name: GuestVN-WAW-IPPool
+            auto_generate_vlan_name: true
+            traffic_type: DATA
+            l3_virtual_network: Guest
+          - name: BYOD-WAW-IPPool
+            auto_generate_vlan_name: true
+            traffic_type: DATA
+            l3_virtual_network: BYOD
+          - name: PrintersVN-WAW-IPPool
+            auto_generate_vlan_name: true
+            traffic_type: DATA
+            l3_virtual_network: Printers
     border_devices:
-      - name: BR10.cisco.eu
+      - name: KRK-DNA-P4-BORD11.cisco.com
         border_types:
           - LAYER_3
         default_exit: true
         import_external_routes: false
-        local_autonomous_system_number: 65001
+        local_autonomous_system_number: 65002
         external_domain_routing_protocol_name: BGP
         l3_handoffs:
-          - name: BGP65002
-            interface_name: GigabitEthernet1/0/3
-            virtual_networks:
-              - name: Campus
-                local_ip_address: 172.16.100.1/24
-                peer_ip_address: 172.16.100.2/24
-                vlan: 100
+          - name: BGP65010
+            interfaces:
+              - name: GigabitEthernet2/0/22
+                virtual_networks:
+                  - name: Campus
+                    local_ip_address: 172.16.130.1/24
+                    peer_ip_address: 172.16.130.2/24
+                    vlan: 311
+        # l2_handoffs:
+        #   l2_without_anycast_gateway:
+        #     vlans:
+        #       - name: GWOF
+        #         external_vlan: 500
+        #     interfaces:
+        #       - Gi2/0/4
+        #       - Gi2/0/5
+        #   l2_with_anycast_gateway:
+        #     - name: Campus
+        #       external_vlan: 400
+        #       interfaces:
+        #         - Gi2/0/4
+      - name: KRK-DNA-P4-BORD12.cisco.com
+        border_types:
+          - LAYER_3
+        default_exit: true
+        import_external_routes: false
+        local_autonomous_system_number: 65002
+        external_domain_routing_protocol_name: BGP
+        l3_handoffs:
+          - name: BGP65010
+            interfaces: 
+              - name: GigabitEthernet0/1/0
+                virtual_networks:
+                  - name: Campus
+                    local_ip_address: 172.16.140.1/24
+                    peer_ip_address: 172.16.140.2/24
+                    vlan: 312
+      - name: KRK-DNA-P4-BORD21.cisco.com
+        border_types:
+          - LAYER_3
+        default_exit: true
+        import_external_routes: true
+        local_autonomous_system_number: 65003
+        external_domain_routing_protocol_name: BGP
+        l3_handoffs:
+          - name: BGP65010
+            interfaces:
+              - name: GigabitEthernet1/0/23
+                virtual_networks:
+                  - name: Campus
+                    local_ip_address: 172.16.150.1/24
+                    peer_ip_address: 172.16.150.2/24
+                    vlan: 313

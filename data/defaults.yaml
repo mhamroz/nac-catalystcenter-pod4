@@ -33,9 +33,9 @@ defaults:
           ipv6:
             address_space: false
     fabric:
-      transits:
-        type: IP_BASED
-        routing_protocol_name: BGP
+      # transits:
+      #   type: IP_BASED
+      #   routing_protocol_name: BGP
       fabric_sites:
         authentication_template_name: No Authentication
         pub_sub_enabled: false

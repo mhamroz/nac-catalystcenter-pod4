@@ -1,0 +1,43 @@
+ !
+  ip access-list standard 23
+  10 remark VTY_ACCESS
+  10 remark CiscoPrime
+  10 permit 172.18.207.103
+  20 permit 172.18.207.102
+  30 permit 172.18.207.105
+  40 remark DNA_Center_PRO
+  40 permit 10.72.192.11
+  50 permit 10.72.192.12
+  60 remark DNA_Center_PRE
+  60 permit 172.18.224.6
+  70 remark VPN F5
+  70 permit 10.72.224.0 0.0.31.255
+  80 permit 10.209.80.0 0.0.15.255
+  90 permit 10.209.208.0 0.0.15.255
+  100 remark PRO_VDI_AZURE_KUBA_TEST_LIVE
+  100 permit 10.78.224.0 0.0.15.255
+  110 permit 10.77.4.0 0.0.3.255
+  120 permit 10.77.32.0 0.0.7.255
+  130 permit 10.88.112.0 0.0.7.255
+  140 permit 10.88.136.0 0.0.7.255
+  150 permit 10.89.112.0 0.0.7.255
+  160 permit 10.89.136.0 0.0.7.255
+  170 remark CIBERARK
+  170 permit 10.76.37.21
+  180 permit 10.76.6.52
+  190 permit 10.255.33.11
+  200 permit 10.61.2.72
+  210 permit 10.76.37.22
+  220 permit 10.76.6.53
+  230 permit 10.255.33.10
+  240 permit 10.61.2.73
+  250 remark SERVER_SCRIPTS_STS-NW
+  250 permit 10.72.192.15
+  260 remark HUBS-CENTRALES-FLEX-VPN
+  260 permit 192.168.248.1
+  270 permit 192.168.248.2
+  280 permit 195.53.125.92
+  290 permit 195.55.119.92
+  291 remark test
+  300 deny   any log
+ !

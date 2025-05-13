@@ -1,0 +1,18 @@
+!
+ ip access-list standard 1
+  10 remark SNMP-RW
+  10 remark CiscoPrime_TA
+  10 permit 172.18.207.102
+  20 remark CiscoPrime_CA
+  20 permit 172.18.207.103
+  30 remark CiscoPrime_VIP
+  30 permit 172.18.207.105
+  40 remark CiscoPrime_PRE
+  40 permit 172.18.207.106
+  50 remark DNA_PRO
+  50 permit 10.72.192.11
+  60 permit 10.72.192.12
+  70 remark DNA_PRE
+  70 permit 172.18.224.6
+  80 deny   any log
+ !

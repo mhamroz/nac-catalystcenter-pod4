@@ -2,21 +2,33 @@
 catalyst_center:
   inventory:
     devices:
-      - name: BR10.cisco.eu
-        hostname: BR10.cisco.eu
-        device_ip: 198.18.130.10
-        pid: C9KV-UADP-8P
-        state: INIT
+      - name: KRK-DNA-P4-BORD11.cisco.com
+        hostname: KRK-DNA-P4-BORD11.cisco.com
+        device_ip: 192.168.40.3
+        pid: C9300-24P
+        state: PROVISION
         device_role: BORDER ROUTER
         site: Global/Poland/Krakow/Bld A
         fabric_site: Global/Poland/Krakow
         fabric_roles:
           - BORDER_NODE
           - CONTROL_PLANE_NODE
-      - name: EDGE01.cisco.eu
-        hostname: EDGE01.cisco.eu
-        device_ip: 198.18.130.1
-        pid: C9KV-UADP-8P
+        # isDefaultExit: y
+      - name: KRK-DNA-P4-BORD12.cisco.com
+        hostname: KRK-DNA-P4-BORD12.cisco.com
+        device_ip: 192.168.40.2
+        pid: ISR4321/K9
+        state: PROVISION
+        device_role: BORDER ROUTER
+        site: Global/Poland/Krakow/Bld A
+        fabric_site: Global/Poland/Krakow
+        fabric_roles:
+          - BORDER_NODE
+          - CONTROL_PLANE_NODE
+      - name: KRK-DNA-P4-EDGE11.cisco.com
+        hostname: KRK-DNA-P4-EDGE11.cisco.com
+        device_ip: 192.168.40.5
+        pid: C9300-24P
         state: INIT
         device_role: ACCESS
         site: Global/Poland/Krakow/Bld A
@@ -24,22 +36,64 @@ catalyst_center:
         fabric_roles:
           - EDGE_NODE
         port_assignments:
-          - interface_name: GigabitEthernet1/0/2
+          - interface_name: GigabitEthernet1/0/1
             connected_device_type: "USER_DEVICE"
             data_vlan_name: "192_168_100_0-Campus"
             authenticate_template_name: "No Authentication"
-      - name: EDGE02.cisco.eu
-        hostname: EDGE02.cisco.eu
-        device_ip: 198.18.130.2
-        pid: C9KV-UADP-8P
-        state: INIT
+      - name: KRK-DNA-P4-EDGE12.cisco.com
+        hostname: KRK-DNA-P4-EDGE12.cisco.com
+        device_ip: 192.168.40.6
+        pid: C9300-24P
+        state: PROVISION
         device_role: ACCESS
         site: Global/Poland/Krakow/Bld A
         fabric_site: Global/Poland/Krakow
         fabric_roles:
           - EDGE_NODE
         port_assignments:
-          - interface_name: GigabitEthernet1/0/3
+          - interface_name: GigabitEthernet1/0/1
             connected_device_type: "USER_DEVICE"
             data_vlan_name: "192_168_100_0-Campus"
             authenticate_template_name: "No Authentication"
+      - name: KRK-DNA-P4-BORD21.cisco.com
+        hostname: KRK-DNA-P4-BORD21.cisco.com
+        device_ip: 192.168.40.4
+        pid: C9300-24P
+        state: PROVISION
+        device_role: BORDER ROUTER
+        site: Global/Poland/Warsaw/Domaniewska 39B
+        fabric_site: Global/Poland/Warsaw
+        fabric_roles:
+          - BORDER_NODE
+          - CONTROL_PLANE_NODE
+        # isDefaultExit: y
+      - name: KRK-DNA-P4-EDGE21.cisco.com
+        hostname: KRK-DNA-P4-EDGE21.cisco.com
+        device_ip: 192.168.40.7
+        pid: C9300-24P
+        state: PROVISION
+        device_role: ACCESS
+        site: Global/Poland/Warsaw/Domaniewska 39B
+        fabric_site: Global/Poland/Warsaw
+        fabric_roles:
+          - EDGE_NODE
+      - name: KRK-DNA-P4-BORD22.cisco.com
+        hostname: KRK-DNA-P4-BORD22.cisco.com
+        device_ip: 192.168.40.8
+        pid: ASR1001-X
+        state: PROVISION
+        device_role: BORDER ROUTER
+        site: Global/Poland/Krakow/Bld A
+        dayn_templates:
+         regular:
+           - name: 0400_acl_standard_1
+             state: REDEPLOY
+           - name: 0420_acl_standard_20
+             state: REDEPLOY
+           - name: 0430_acl_standard_23
+             state: REDEPLOY
+           - name: 0440_acl_standard_24
+             state: REDEPLOY
+
+
+
