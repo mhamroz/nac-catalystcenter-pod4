@@ -2,10 +2,16 @@ terraform {
   required_providers {
     catalystcenter = {
       source  = "CiscoDevNet/catalystcenter"
-      version = "0.2.4"
+      version = "0.2.6"
     }
   }
 }
+
+# terraform {
+#   backend "http" {
+#     skip_cert_verification = true
+#   }
+# }
 
 provider "catalystcenter" {
   username    = "admin"
@@ -15,7 +21,7 @@ provider "catalystcenter" {
 }
 
 module "catalyst_center" {
-  source = "git::https://github.com/netascode/terraform-catalystcenter-nac-catalystcenter.git?ref=dev_sda"
+  source = "git::https://github.com/netascode/terraform-catalystcenter-nac-catalystcenter.git?ref=dev"
 
   yaml_directories      = ["data/"]
   templates_directories = ["data/templates/"]

@@ -1,0 +1,6 @@
+terraform init -migrate-state `
+-backend-config="address=https://gitlab.pod4.cisco.com/api/v4/projects/${PROJECT_ID}/terraform/state/nac-catalystcenter-pod4" `
+-backend-config="lock_address=https://gitlab.pod4.cisco.com/api/v4/projects/${PROJECT_ID}/terraform/state/nac-catalystcenter-pod4/lock" `
+-backend-config="unlock_address=https://gitlab.pod4.cisco.com/api/v4/projects/${PROJECT_ID}/terraform/state/nac-catalystcenter-pod4/lock" `
+-backend-config="username=root" -backend-config="password=${GITLAB_ACCESS_TOKEN}" `
+-backend-config=lock_method=POST -backend-config="unlock_method=DELETE" -backend-config="retry_wait_min=5"

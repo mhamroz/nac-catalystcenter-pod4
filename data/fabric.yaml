@@ -6,11 +6,11 @@ catalyst_center:
         type: IP_BASED_TRANSIT
         routing_protocol_name: BGP
         autonomous_system_number: 65010
-      # - name: SDA_TRANSIT
-      #   type: SDA_LISP_PUB_SUB_TRANSIT
-      #   control_plane_devices: 
-      #     - KRK-DNA-P4-BORD22
-      #   multicast_over_sda_transit: true
+      - name: SDA_TRANSIT
+        type: SDA_LISP_PUB_SUB_TRANSIT
+        control_plane_devices: 
+          - KRK-DNA-P4-BORD22
+        multicast_over_sda_transit: true
     fabric_sites:
       - name: Global/Poland/Krakow
         authentication_template_name: No Authentication
@@ -70,6 +70,11 @@ catalyst_center:
         import_external_routes: false
         local_autonomous_system_number: 65002
         external_domain_routing_protocol_name: BGP
+        affinity_id_prime: 100
+        affinity_id_decider: 100
+        connected_to_internet: true
+        multicast_over_transit: true
+        sda_transit: SDA_TRANSIT
         l3_handoffs:
           - name: BGP65010
             interfaces:
@@ -115,6 +120,11 @@ catalyst_center:
         import_external_routes: true
         local_autonomous_system_number: 65003
         external_domain_routing_protocol_name: BGP
+        affinity_id_prime: 10
+        affinity_id_decider: 10
+        connected_to_internet: true
+        multicast_over_transit: true
+        sda_transit: SDA_TRANSIT
         l3_handoffs:
           - name: BGP65010
             interfaces:

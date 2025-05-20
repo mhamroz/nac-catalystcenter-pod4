@@ -29,7 +29,7 @@ catalyst_center:
         hostname: KRK-DNA-P4-EDGE11.cisco.com
         device_ip: 192.168.40.5
         pid: C9300-24P
-        state: INIT
+        state: PROVISION
         device_role: ACCESS
         site: Global/Poland/Krakow/Bld A
         fabric_site: Global/Poland/Krakow
@@ -87,13 +87,13 @@ catalyst_center:
         dayn_templates:
          regular:
            - name: 0400_acl_standard_1
-             state: REDEPLOY
+             state: DEPLOY
            - name: 0420_acl_standard_20
-             state: REDEPLOY
+             state: DEPLOY
            - name: 0430_acl_standard_23
-             state: REDEPLOY
+             state: DEPLOY
            - name: 0440_acl_standard_24
-             state: REDEPLOY
+             state: DEPLOY
 
 
 

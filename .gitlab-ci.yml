@@ -1,0 +1,95 @@
+---
+image:
+  name: danischm/nac:0.1.4
+  pull_policy: if-not-present
+
+stages:
+  - validate
+  - plan
+  - deploy
+  - cleanup
+
+variables:
+  TF_HTTP_USERNAME:
+    description: "GitLab Username"
+    value: "root"
+  TF_HTTP_PASSWORD:
+    description: "GitLab Access Token"
+    value: "${GITLAB_TOKEN}"
+  TF_HTTP_ADDRESS:
+    description: "GitLab HTTP Address to store the TF state file"
+    value: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/terraform/state/nac-ise-comprehensive-example"
+  TF_HTTP_LOCK_ADDRESS:
+    description: "GitLab HTTP Address to lock the TF state file"
+    value: ${TF_HTTP_ADDRESS}/lock
+  TF_HTTP_LOCK_METHOD:
+    description: "Method to lock TF state file"
+    value: POST
+  TF_HTTP_UNLOCK_ADDRESS:
+    description: "GitLab HTTP Address to unlock the TF state file"
+    value: ${TF_HTTP_ADDRESS}/lock
+  TF_HTTP_UNLOCK_METHOD:
+    description: "Method to unlock TF state file"
+    value: DELETE
+
+cache:
+  key: terraform_modules_and_lock
+  paths:
+    - .terraform
+    - .terraform.lock.hcl
+
+validate:
+  stage: validate
+  script:
+    - set -o pipefail && terraform fmt -check |& tee fmt_output.txt
+  artifacts:
+    paths:
+      - fmt_output.txt
+
+plan:
+  stage: plan
+  script:
+    - terraform init -input=false --upgrade
+    - terraform plan -out=plan.tfplan -input=false
+    - terraform show -no-color plan.tfplan > plan.txt
+    - terraform show -json plan.tfplan | jq > plan.json
+    - terraform show -json plan.tfplan | jq '([.resource_changes[]?.change.actions?]|flatten)|{"create":(map(select(.=="create"))|length),"update":(map(select(.=="update"))|length),"delete":(map(select(.=="delete"))|length)}' > plan_gitlab.json
+  artifacts:
+    paths:
+      - plan.json
+      - plan.txt
+      - plan.tfplan
+      - plan_gitlab.json
+    reports:
+      terraform: plan_gitlab.json
+  dependencies: []
+  needs:
+    - validate
+  only:
+    - merge_requests
+    - main
+
+deploy:
+  stage: deploy
+  script:
+    - terraform init -input=false
+    - terraform apply -input=false -auto-approve plan.tfplan
+  dependencies:
+    - plan
+  needs:
+    - plan
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      when: manual
+
+cleanup:
+  stage: cleanup
+  script:
+    - terraform init -input=false
+    - terraform destroy -input=false -auto-approve
+  dependencies: []
+  needs:
+    - deploy
+  when: manual
+  only:
+    - main
